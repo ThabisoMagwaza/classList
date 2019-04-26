@@ -17,6 +17,7 @@ let displayStudentsList = function (studentList) {
     </div>
     <div class="col-3">
         <button class="btn btn-sm btn-outline-danger">Delete</button>
+        <button class="btn btn-sm btn-outline-warning">Edit</button>
     </div>
 </div>
 
