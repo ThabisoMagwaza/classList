@@ -1,6 +1,6 @@
 # classList
 This is a simple class list application to demonstrate my competence in nodejs, express, javascript, css, html, bootstrap and git.
-These tools used to to build this application.
+These tools used to to build this application. The app is also deployed to azure with automatic test and deployment done using Travis
 
 ### Fuctionality
 - View current list of students
