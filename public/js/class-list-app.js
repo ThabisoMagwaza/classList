@@ -27,6 +27,8 @@ let displayStudents = function () {
         let li = document.createElement('li')
         let liText = document.createTextNode(student.name)
 
+        let liBtn = document.createElement('button')
+
         li.className += 'student'
 
         li.appendChild(liText)
