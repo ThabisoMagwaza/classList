@@ -8,5 +8,13 @@ These tools used to to build this application.
 - Delete students
 - Edit students
 
+## Running the application
+This application is not hosted on any site as yet. To run it:
+- clone the master branch
+- npm install
+- node run index.js
+
+This will launch express server on your localhost at port 3000. Navigate to your browser and view 'localhost:3000/class'
+
 #### Comments
 Please feel free to inspect the code as an assessment of my coding style. As this is a simple demonstration, a lof of error checking has been ommited.
