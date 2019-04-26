@@ -1,50 +1,31 @@
-let students = []
+'use strict'
 
-// filters list of students by name
-// let filterByName = function (listWithNames, name) {
-//   name = name.toLowerCase() // search must be case sensitive
-//   return listWithNames.filter(student => (student.name.toLowerCase().startsWith(name)))
-// }
+let displayStudentsList = function (classList, studentList) {
+  studentList.forEach(student => {
+    let li = document.createElement('li')
+    let liText = document.createTextNode(student.name)
 
-let displayStudents = function () {
-  let displayedStudents = document.querySelector('.students-list')
-  displayedStudents.innerHTML = ''
-  // Asychronously
-  fetch('/class/api/list')
-    .then(response => {
-      // chek if response code ok
-      if (response.ok) {
-        return response.json()
-      } else {
-        throw 'failed'
-      }
-    }).then(data => {
-      let classList = document.querySelector('.students-list')
-      students = data
-      // students = filterByName(students)
+    // let liBtn = document.createElement('button')
+    // let btn
 
-      data.forEach(student => {
-        let li = document.createElement('li')
-        let liText = document.createTextNode(student.name)
+    li.className += 'student'
 
-        let liBtn = document.createElement('button')
-
-        li.className += 'student'
-
-        li.appendChild(liText)
-        classList.appendChild(li)
-      })
-    })
-    .catch(e => {
-      alert(e)
-    })
+    li.appendChild(liText)
+    classList.appendChild(li)
+  })
 }
 
-// document.querySelector('.search-text').addEventListener('input', e => {
-//   // let filter = document.querySelector('.search-text').value
-//   // let displayedStudents = filterByName(students, filter)
-//   // let displayedStudents = filterByStudentNumber(students, filter)
-//   displayStudents()
-// })
+async function getClassList () {
+  let response = await fetch('/class/api/list')
+  let students = await response.json()
+  displayStudents(students)
+}
 
-displayStudents()
+let displayStudents = function (studentList) {
+  let displayedStudents = document.querySelector('.students-list')
+  displayedStudents.innerHTML = ''
+
+  displayStudentsList(displayedStudents, studentList)
+}
+
+getClassList()
