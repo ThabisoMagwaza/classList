@@ -25,13 +25,13 @@ let displayStudentsList = function (studentList) {
   })
 }
 
-async function getClassList() {
+async function getClassList () {
   let response = await fetch('/class/api/list')
   let students = await response.json()
   displayStudents(students)
 }
 
-async function deleteStudent(delURL) {
+async function deleteStudent (delURL) {
   // console.log(delURL)
   await fetch(delURL)
   getClassList()
@@ -48,4 +48,8 @@ document.querySelector('.list').addEventListener('click', e => {
   let delStudent = e.target.parentNode.parentNode.id
   let delURL = `/class/api/delete/${delStudent}`
   deleteStudent(delURL)
+})
+
+document.querySelector('#add-student').addEventListener('click', () => {
+  console.log('clicked!')
 })
