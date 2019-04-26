@@ -5,7 +5,7 @@ let displayStudentsList = function (studentList) {
   displayedStudents.innerHTML = ''
 
   studentList.forEach(student => {
-    let newStudentHTML = `                <div class="row">
+    let newStudentHTML = `                <div class="row" id=${student.name}>
     <div class="col-3">
         <small class="student-info">${student.name}</small>
     </div>
@@ -25,10 +25,16 @@ let displayStudentsList = function (studentList) {
   })
 }
 
-async function getClassList () {
+async function getClassList() {
   let response = await fetch('/class/api/list')
   let students = await response.json()
   displayStudents(students)
+}
+
+async function deleteStudent(delURL) {
+  // console.log(delURL)
+  await fetch(delURL)
+  getClassList()
 }
 
 let displayStudents = function (studentList) {
@@ -36,3 +42,10 @@ let displayStudents = function (studentList) {
 }
 
 getClassList()
+
+// wait to see if student has been deleted
+document.querySelector('.list').addEventListener('click', e => {
+  let delStudent = e.target.parentNode.parentNode.id
+  let delURL = `/class/api/delete/${delStudent}`
+  deleteStudent(delURL)
+})

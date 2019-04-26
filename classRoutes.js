@@ -43,11 +43,12 @@ router.get('/create', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'create.html'))
 })
 
-router.post('/api/delete', (req, res) => {
-  console.log(`deleting: ${req.body.studentName}`)
-  const name = req.body.studentName.toLocaleLowerCase()
+router.get('/api/delete/:name', (req, res) => {
+  console.log(`deleting: ${req.params.name}`)
+  const name = req.params.name.toLocaleLowerCase()
   const index = students.findIndex(el => el.name.toLocaleLowerCase() === name)
   index > -1 ? students.splice(index, 1) : res.status(404).redirect('/class')
-  res.redirect('/class')
+  res.send(`deleting: ${req.params.name}`)
 })
+
 module.exports = router
