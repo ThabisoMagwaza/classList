@@ -17,13 +17,18 @@ router.get('/api/list', (req, res) => {
   res.json(students)
 })
 
-router.post('/api/edit', (req, res) => {
-  console.log(`editing: ${req.body.nameCurrent} -> ${req.body.nameNew}`)
+router.post('/api/edit/:name', (req, res) => {
+  console.log(`editing: ${req.params.name}`)
   // first load students
-  const nameCurrent = req.body.nameCurrent
-  const nameNew = req.body.nameNew
-  const index = students.findIndex(el => el.name.toLocaleLowerCase() === nameCurrent.toLocaleLowerCase())
-  index > -1 ? students[index].name = nameNew : res.status(404).redirect('/class')
+  const editname = req.params.name
+  // find student in database
+  const index = students.findIndex(el => el.name === editname)
+
+  // edit student to new parameters
+  students[index].name = req.body.editname
+  students[index].studentNumber = req.body.editstudentNumber
+  students[index].yearOfStudy = req.body.edityearOfStudy
+
   res.redirect('/class')
 })
 
