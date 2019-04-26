@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box
+    
+}
+
+.student-info-heading {
+    font-weight: bold;
+    color: dimgrey;
+}
+
+.student-info {
+    color: dimgrey
+}
+
+.list-heading {
+    text-align: center
+}
+
+.list {
+
+}
+
+.heading-hr{
+    background-color: darkgray
+}
+
+.list-wrapper {
+    margin: auto;
+    width: 800px
+}

@@ -28,11 +28,11 @@ router.post('/api/edit', (req, res) => {
 })
 
 router.post('/api/create', (req, res) => {
-  console.log('Creating the following student', req.body.studentName)
+  console.log('Creating the following student', req.body.name)
   let newStudent = {
-    name: req.body.studentName,
-    studentNumber: 1234,
-    yearOfStudy: 4,
+    name: req.body.name,
+    studentNumber: req.body.studentNumber,
+    yearOfStudy: req.body.yearOfStudy,
     electives: 'none'
   }
   students.push(newStudent)
