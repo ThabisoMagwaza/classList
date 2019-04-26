@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>Class List</title>
+</head>
+
+<body>
+    <h1>Class List</h1>
+    <input type="text" class="search-text" placeholder="Filter students">
+
+    <div class="students-list"></div>
+
+    <!-- <form action="/api/class/:id" method="post">
+        <input type="text" name="id">
+        <button type="submit"> send</button>
+    </form> -->
+    <form action="/class/api/create" method="POST">
+        <div>
+            <label for="studentName">Enter The Student's Name: </label>
+            <input type="text" id="studentName" name="studentName">
+        </div>
+
+        <div class="button">
+            <button type="submit">Add</button>
+        </div>
+    </form>
+
+    <form action="/class/api/delete" method="POST">
+        <div>
+            <label for="studentName">Enter The Student's Name: </label>
+            <input type="text" id="studentName" name="studentName">
+        </div>
+
+        <div class="button">
+            <button type="submit">Delete</button>
+        </div>
+    </form>
+
+    <form action="/class/api/edit" method="POST">
+        <input type="text" name="nameCurrent" placeholder="Current Name">
+        <input type="text" name="nameNew" placeholder="New Name">
+        <button type="submit">Edit</button>
+    </form>
+
+    <script src="../cdn/js/class-list-app.js"></script>
+</body>
+
+</html>
