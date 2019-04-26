@@ -46,11 +46,13 @@ getClassList()
 
 // wait to see if student has been deleted
 document.querySelector('.list').addEventListener('click', e => {
-  let delStudent = e.target.parentNode.parentNode.id
-  let delURL = `/class/api/delete/${delStudent}`
-  deleteStudent(delURL)
-})
+  let student = e.target.parentNode.parentNode.id
+  let btnPressed = e.target.classList[2]
 
-document.querySelector('#add-student').addEventListener('click', () => {
-  console.log('clicked!')
+  if (btnPressed === 'btn-outline-danger') { // delete button
+    let delURL = `/class/api/delete/${student}`
+    deleteStudent(delURL)
+  } else if (btnPressed === 'btn-outline-warning') { // edit button
+    console.log(`editing ${student}`)
+  }
 })
