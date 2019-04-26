@@ -5,46 +5,37 @@
     <!-- <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../cdn/css/class-list-app.css">
     <title>Class List</title>
 </head>
 
 <body>
-    <h1>Class List</h1>
-    <input type="text" class="search-text" placeholder="Filter students">
 
-    <div class="students-list"></div>
+    <div class="container-fluid">
+        <div class="h2 list-heading">Class List</div>
 
-    <!-- <form action="/api/class/:id" method="post">
-        <input type="text" name="id">
-        <button type="submit"> send</button>
-    </form> -->
-    <!-- <form action="/class/api/create" method="POST">
-        <div>
-            <label for="studentName">Enter The Student's Name: </label>
-            <input type="text" id="studentName" name="studentName">
+        <div class="list">
+            <div class="row">
+                <div class="col-3">
+                    <small class="student-info-heading">Name</small>
+                </div>
+                <div class="col-3">
+                    <small class="student-info-heading">Student Number</small>
+                </div>
+                <div class="col-3">
+                    <small class="student-info-heading">Year of Study</small>
+                </div>
+            </div>
+            <hr class="heading-hr">
+
+            <div class="students"></div>
+
         </div>
 
-        <div class="button">
-            <button type="submit">Add</button>
-        </div>
-    </form>
+    </div>
 
-    <form action="/class/api/delete" method="POST">
-        <div>
-            <label for="studentName">Enter The Student's Name: </label>
-            <input type="text" id="studentName" name="studentName">
-        </div>
-
-        <div class="button">
-            <button type="submit">Delete</button>
-        </div>
-    </form>
-
-    <form action="/class/api/edit" method="POST">
-        <input type="text" name="nameCurrent" placeholder="Current Name">
-        <input type="text" name="nameNew" placeholder="New Name">
-        <button type="submit">Edit</button>
-    </form> -->
 
     <script src="../cdn/js/class-list-app.js"></script>
 </body>

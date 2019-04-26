@@ -1,17 +1,27 @@
 'use strict'
 
-let displayStudentsList = function (classList, studentList) {
+let displayStudentsList = function (studentList) {
+  let displayedStudents = document.querySelector('.students')
+  displayedStudents.innerHTML = ''
+
   studentList.forEach(student => {
-    let li = document.createElement('li')
-    let liText = document.createTextNode(student.name)
+    let newStudentHTML = `                <div class="row">
+    <div class="col-3">
+        <small class="student-info">${student.name}</small>
+    </div>
+    <div class="col-3">
+        <small class="student-info">${student.studentNumber}</small>
+    </div>
+    <div class="col-3">
+        <small class="student-info">${student.yearOfStudy}</small>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-sm btn-outline-danger">Delete</button>
+    </div>
+</div>
 
-    // let liBtn = document.createElement('button')
-    // let btn
-
-    li.className += 'student'
-
-    li.appendChild(liText)
-    classList.appendChild(li)
+<hr>`
+    displayedStudents.insertAdjacentHTML('beforeend', newStudentHTML)
   })
 }
 
@@ -22,10 +32,7 @@ async function getClassList () {
 }
 
 let displayStudents = function (studentList) {
-  let displayedStudents = document.querySelector('.students-list')
-  displayedStudents.innerHTML = ''
-
-  displayStudentsList(displayedStudents, studentList)
+  displayStudentsList(studentList)
 }
 
 getClassList()
