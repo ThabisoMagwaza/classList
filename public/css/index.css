@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+}
+
+.jumbotron {
+    height: 100vh;
+    background-image: url(../img/background-class.jpg);
+    background-size: cover
+}
+
+.jumbotron-body {
+    margin-top: 20vh;
+    color: lightgray
+}
+
+hr {     
+    background-color: darkgray;
+    height: 1px;
+    width: 80%
+}
+
