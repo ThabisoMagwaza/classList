@@ -2,7 +2,7 @@
 This is a simple class list application to demonstrate my competence in nodejs, express, javascript, css, html, bootstrap and git.
 These tools used to to build this application. The app is also deployed to azure with automatic test and deployment done using Travis.
 
-- The web app will be available at https://classlist.azurewebsites.net/class until the October 2019
+- The web app will be available at https://classlist.azurewebsites.net/ until the October 2019
 
 
 ### Fuctionality
