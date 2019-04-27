@@ -4,13 +4,13 @@
 
 .jumbotron {
     height: 100vh;
-    background-image: url(../img/background-class.jpg);
+    background-image: url(../img/background-books.jpg);
     background-size: cover
 }
 
 .jumbotron-body {
     margin-top: 20vh;
-    color: lightgray
+    color: hsla(0, 0%, 100%, 0.925)
 }
 
 hr {     
